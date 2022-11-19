@@ -28,12 +28,130 @@
                     <span class="text-gray-500">ONLINE/NOT ONLINE</span>
                 </div>
             </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
+            <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+                <div class="w-1/4">
+                    <img
+                    src="assets/images/sadboi.png"
+                    class="object-cover h-12 w-12 rounded-full"
+                    alt=""
+                    />
+                </div>
+                <div class="w-full">
+                    <div class="text-lg font-semibold">TARGETED ID</div>
+                    <span class="text-gray-500">ONLINE/NOT ONLINE</span>
+                </div>
+            </div>
         </div>
         <!-- end user list -->
     </div>
   <!-- end chat list -->
   <!-- message -->
   <div class="w-full px-5 flex flex-col justify-between">
+    {{-- message --}}
     <div class="flex flex-col mt-5 min-h-[70vh] max-h-[80vh] overflow-auto scrollbar">
         {{-- pengirim --}}
       <div class="flex justify-end mb-4">
@@ -43,7 +161,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
         </div>
         <img
-          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+        src="assets/images/sadboi.png"
           class="object-cover h-8 w-8 rounded-full"
           alt=""
         />
@@ -51,7 +169,182 @@
         {{-- penerima --}}
       <div class="flex justify-start mb-4">
         <img
-          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, earum?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
+        </div>
+        <img
+        src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+        {{-- penerima --}}
+      <div class="flex justify-start mb-4">
+        <img
+          src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, earum?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
+        </div>
+        <img
+        src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+        {{-- penerima --}}
+      <div class="flex justify-start mb-4">
+        <img
+          src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, earum?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
+        </div>
+        <img
+        src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+        {{-- penerima --}}
+      <div class="flex justify-start mb-4">
+        <img
+          src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, earum?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
+        </div>
+        <img
+        src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+        {{-- penerima --}}
+      <div class="flex justify-start mb-4">
+        <img
+          src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, earum?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
+        </div>
+        <img
+        src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+        {{-- penerima --}}
+      <div class="flex justify-start mb-4">
+        <img
+          src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, earum?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
+        </div>
+        <img
+        src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+        {{-- penerima --}}
+      <div class="flex justify-start mb-4">
+        <img
+          src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, earum?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ullam delectus deleniti natus unde recusandae voluptatibus nesciunt laudantium autem nihil!
+        </div>
+        <img
+        src="assets/images/sadboi.png"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+        {{-- penerima --}}
+      <div class="flex justify-start mb-4">
+        <img
+          src="assets/images/sadboi.png"
           class="object-cover h-8 w-8 rounded-full"
           alt=""
         />
@@ -63,6 +356,13 @@
       </div>
       
     </div>
+    {{-- end message --}}
+    {{-- empty message --}}
+    {{-- <div class="flex justify-center bg-slate-500 flex-col mt-5 min-h-[70vh] max-h-[80vh] overflow-auto scrollbar">
+       <p>start chat now</p>
+    </div> --}}
+
+    {{-- input message --}}
     <div class="py-5">
         <form action="">
             <input

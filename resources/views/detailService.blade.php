@@ -19,9 +19,8 @@
       
       {{-- Main Content --}}
       <div class="w-full h-full">
-          <livewire:forum.chats>
+         <livewire:service.detail-service/>
       </div>
-
     </div>
 </div>
 <x-footer />

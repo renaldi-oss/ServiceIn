@@ -34,18 +34,21 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
+            'image' => 'default',
         ])->assignRole('admin');
         User::factory()->create([
             'name' => 'Costumer',
             'email' => 'test@gmail.com',
             'password' => Hash::make('test'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
+            'image' => 'default',
         ])->assignRole('costumer');
         User::factory()->create([
             'name' => 'Shop',
             'email' => 'shop@gmail.com',
             'password' => Hash::make('shop'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
+            'image' => 'default',
         ])->assignRole('shop');
 
         //membuat akun dummy costumer

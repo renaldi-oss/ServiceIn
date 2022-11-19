@@ -60,6 +60,10 @@ Route::middleware('auth')->group(function () {
         return view('service');
     })->name('service');
 
+    Route::get('detailService', function () {
+        return view('detailService');
+    })->name('detailService');
+    
     Route::get('about', function () {
         return view('about');
     })->name('about');

@@ -35,7 +35,7 @@ class Register extends Component
             'email' => $this->email,
             'name' => $this->name,
             'password' => Hash::make($this->password),
-        ]);
+        ])->assignRole('costumer');
 
         event(new Registered($user));
 

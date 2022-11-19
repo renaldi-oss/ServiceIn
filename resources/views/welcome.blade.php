@@ -1,34 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8">
-        {{-- <div class="absolute top-0 right-0 mt-4 mr-4">
-            @if (Route::has('login'))
-                <div class="space-x-4">
-                    @auth
-                        <a
-                            href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                            class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                        >
-                            Log out
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    @else
-                        <a href="{{ route('login') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div> --}}
+    <div class="flex flex-col">
         <x-navbar />
-        <div class="flex items-center justify-center">
+        {{-- <div class="flex items-center justify-center">
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">
                     <a href="{{ route('home') }}">
@@ -66,8 +41,38 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> --}}
+        <section class="background-radial-gradient overflow-hidden w-screen h-screen">
+                <div class="mt-10 px-6 pt-32 text-center">
+                    <div class="container mx-auto xl:px-32 text-gray-800" id="tsparticles">
+                        <div class="grid gap-12 items-center">
+                            <div class="mt-32" style="z-index: 10;">
+                                <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" style="color: hsl(218, 81%, 95%);"><span style="color: hsl(218, 81%, 75%);">ServiceIn</span></h1>
+                                {{-- <p class="opacity-70" style="color: hsl(218, 81%, 85%)">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    Temporibus, expedita iusto veniam atque, magni tempora mollitia
+                                    dolorum consequatur nulla, neque debitis eos reprehenderit quasi
+                                    ab ipsum nisi dolorem modi. Quos?
+                                </p> --}}
+                                <div class="type-wrap">
+                                    <div id="typed-strings" class="text-base">
+                                      <span>Your Satisfaction is our <strong> #1 Priority</strong></span>
+                                      <p><strong>ServiceIn</strong> Solusi perangkat anda</p>
+                                      <p>We will Give Our Best <strong>Effort</strong></p>
+                                      <p >Try it out! now</p>
+                                    </div>
+                                    <span id="typed" style="white-space:pre;" class="text-cyan-600 text-xl"></span>
+                                  </div>
+                            </div>
+                            <div class="mb-12 lg:mb-0 relative">
+                                <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
+                                <div id="radius-shape-2" class="absolute shadow-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
     </div>
-
+    
     <x-footer />
 @endsection
