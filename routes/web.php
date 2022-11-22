@@ -69,7 +69,10 @@ Route::middleware('auth')->group(function () {
     })->name('about');
 
     Route::get('forum', function () {
-        return view('forum');
+        return view('forum',[
+            'title' => 'Forum',
+            'description' => 'disini kamu bisa berdiskusi dengan kita semua',
+        ]);
     })->name('forum');
 
     Route::get('chat', function () {

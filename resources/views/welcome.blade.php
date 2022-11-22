@@ -48,12 +48,6 @@
                         <div class="grid gap-12 items-center">
                             <div class="mt-32" style="z-index: 10;">
                                 <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" style="color: hsl(218, 81%, 95%);"><span style="color: hsl(218, 81%, 75%);">ServiceIn</span></h1>
-                                {{-- <p class="opacity-70" style="color: hsl(218, 81%, 85%)">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    Temporibus, expedita iusto veniam atque, magni tempora mollitia
-                                    dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-                                    ab ipsum nisi dolorem modi. Quos?
-                                </p> --}}
                                 <div class="type-wrap">
                                     <div id="typed-strings" class="text-base">
                                       <span>Your Satisfaction is our <strong> #1 Priority</strong></span>

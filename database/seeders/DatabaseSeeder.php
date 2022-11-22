@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'costumer']);
-        Role::create(['name' => 'shop']);
+        Role::create(['name' => 'service']);
         
         User::factory()->create([
             'name' => 'Admin',
@@ -38,18 +38,18 @@ class DatabaseSeeder extends Seeder
         ])->assignRole('admin');
         User::factory()->create([
             'name' => 'Costumer',
-            'email' => 'test@gmail.com',
-            'password' => Hash::make('test'),
+            'email' => 'test1@gmail.com',
+            'password' => Hash::make('test1'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
             'image' => 'default',
         ])->assignRole('costumer');
         User::factory()->create([
-            'name' => 'Shop',
-            'email' => 'shop@gmail.com',
-            'password' => Hash::make('shop'),
+            'name' => 'service',
+            'email' => 'test2@gmail.com',
+            'password' => Hash::make('test2'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
             'image' => 'default',
-        ])->assignRole('shop');
+        ])->assignRole('service');
 
         //membuat akun dummy costumer
         user::factory(10)->create()->each(function ($user) {

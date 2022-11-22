@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('privatechats', function (Blueprint $table) {
+        Schema::create('public_messages', function (Blueprint $table) {
             $table->id();
-            $table->foreign('sender')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('receiver')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('privatechats');
+        Schema::dropIfExists('public_messages');
     }
 };

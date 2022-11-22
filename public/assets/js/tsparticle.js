@@ -2,6 +2,9 @@ const ts = document.getElementById('tsparticles');
 
 if(ts){
   tsParticles.load('tsparticles', {
+    Zindex: {
+        value: -1,
+    },
     particles: {
         color: {
         value: '#CF5C36'

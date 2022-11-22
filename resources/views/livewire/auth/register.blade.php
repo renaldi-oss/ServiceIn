@@ -6,7 +6,7 @@
             <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
         </a>
 
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
+        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-400 leading-9">
             Create a new account
         </h2>
 
