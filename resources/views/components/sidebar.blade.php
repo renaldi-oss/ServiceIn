@@ -11,7 +11,7 @@
           </div>
       </div>
        <div class="flex flex-col items-center text-center justify-center">
-         <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Name</h2>
+         <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">{{ Auth::user()->name }}</h2>
          <div class="w-12 h-1 bg-blue-500 rounded mt-2 mb-4"></div>
          <p class="text-base">Selamat Datang</p>
        </div>
@@ -58,9 +58,8 @@
                </li>
                <li>
                   <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-blue-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                     <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                      <span class="flex-1 ml-3 whitespace-nowrap">Logout</span>
-            
                   </a>
                    
                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -164,7 +164,7 @@ Alpine.start()
 //   })
 // });
 
-
+import Swal from 'sweetalert2';
 import Filter from 'bad-words';
 
 const filter = new Filter();
@@ -181,14 +181,16 @@ const toxicWords =
 filter.addWords(...toxicWords);
 
 // submit form from forum
-message_form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    // console.log(message_input.value);
-    const pesan = filter.clean(message_input.value);
-    // console.log(pesan);
-    message_input.value = '';
-    livewire.emitTo('forum.chats', 'send',pesan);
-});
+if(document.getElementById('message_form') != null){
+    message_form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // console.log(message_input.value);
+        const pesan = filter.clean(message_input.value);
+        // console.log(pesan);
+        message_input.value = '';
+        livewire.emitTo('forum.chats', 'send',pesan);
+    });
+}
 
 // listen to channel publicchat
 Echo.channel('publicChat')
@@ -196,7 +198,24 @@ Echo.channel('publicChat')
         livewire.emitTo('forum.chats','refreshComponent');
 });
 
-
+// notif pencarian user tidak ditemukan
+livewire.on('userNotFound',(cariNama) => {
+    Swal.fire({
+        title: 'Error!',
+        text: 'Pencarian user '+cariNama+' tidak ditemukan',
+        icon: 'error',
+        confirmButtonText: 'sorry'
+    });
+});
+//notif pencarian telah berhasil dan otomatis ditambah ke contact
+livewire.on('userFound',(cariNama) => {
+    Swal.fire({
+        title: 'berhasil!',
+        text: 'Pencarian user '+cariNama+' ditemukan dan berhasil ditambahkan ke contact',
+        icon: 'success',
+        confirmButtonText: 'found him !'
+    });
+});
 
 
 

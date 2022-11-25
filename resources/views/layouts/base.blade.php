@@ -14,7 +14,7 @@
         <!-- Favicon -->
 		<link rel="shortcut icon" href="{{ url(asset('/assets/images/logo.png')) }}">
         {{-- icons --}}
-        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="https://kit.fontawesome.com/07bf307b71.js" crossorigin="anonymous"></script>
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
@@ -24,9 +24,12 @@
         <!-- tsParticles engine -->
         <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
         <script src="https://cdn.jsdelivr.net/npm/tsparticles/tsparticles.bundle.min.js"></script>
-        {{-- sdn sweetalert2 --}}
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        {{-- cdn sweetalert2 --}}
+        {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
         
+
+
+
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
    
         @livewireStyles
@@ -40,10 +43,9 @@
         {{-- js --}}
         <script src="{{ url(asset('assets/js/hamburger.js')) }}"></script>
         <script src="{{ url(asset('assets/js/tsparticle.js')) }}"></script>
-        <script src="{{ url(asset('assets/js/echo.js')) }}" type="module"></script>
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
        <script>
-          if('#typed'){
+          if(document.getElementById('typed') != null){
             var typed = new Typed("#typed", {
                 stringsElement: '#typed-strings',
                 typeSpeed: 50,

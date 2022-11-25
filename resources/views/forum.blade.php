@@ -24,9 +24,6 @@
 
     </div>
 </div>
-<script>
 
-
-</script>
 <x-footer />
 @endsection
