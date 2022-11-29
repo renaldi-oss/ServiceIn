@@ -35,6 +35,12 @@ class Notif implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('notif.' . $this->receiverId);
+        return new PrivateChannel('notif.'. $this->receiverId);
+    }
+    public function broadcastWith()
+    {
+        return [
+            'name' => $this->senderUserName,
+        ];
     }
 }

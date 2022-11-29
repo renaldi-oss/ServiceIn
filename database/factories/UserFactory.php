@@ -24,6 +24,8 @@ class UserFactory extends Factory
             'password' => Hash::make('test'), // password
             'no_hp' => fake()->phoneNumber(),
             'remember_token' => Str::random(10),
+            'image' => 'default',
+            'last_seen' => now(),
         ];
     }
 

@@ -19,12 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+ 
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'costumer']);
         Role::create(['name' => 'service']);
@@ -35,26 +30,32 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
             'image' => 'default',
+            'last_seen' => now(),
         ])->assignRole('admin');
         User::factory()->create([
             'name' => 'Costumer',
-            'email' => 'test1@gmail.com',
-            'password' => Hash::make('test1'),
+            'email' => 'costumer@gmail.com',
+            'password' => Hash::make('costumer'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
             'image' => 'default',
+            'last_seen' => now(),
         ])->assignRole('costumer');
         User::factory()->create([
             'name' => 'service',
-            'email' => 'test2@gmail.com',
-            'password' => Hash::make('test2'),
+            'email' => 'service@gmail.com',
+            'password' => Hash::make('service'),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
             'image' => 'default',
+            'last_seen' => now(),
         ])->assignRole('service');
 
         //membuat akun dummy costumer
-        user::factory(10)->create()->each(function ($user) {
+        user::factory(20)->create()->each(function ($user) {
             $user->assignRole('costumer');
         });
-
+        //membuat akun dummy service
+        user::factory(8)->create()->each(function ($user) {
+            $user->assignRole('service');
+        });
     }
 }

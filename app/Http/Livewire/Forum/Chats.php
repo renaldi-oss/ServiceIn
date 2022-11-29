@@ -28,12 +28,13 @@ class Chats extends Component
         $this->user = auth()->user();
     }
     public function sendMessage($message){
-        // dd($message);
+        
         PublicMessage::create([
             'user_id' => $this->user->id,
             'message' => $message,
         ]);
         $this->emitSelf('refreshComponent');
+        $this->emit('publicMessageSent');
         event(
             new MessagePublic(
                 $this->user->name,

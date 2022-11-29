@@ -26,14 +26,14 @@
         <script src="https://cdn.jsdelivr.net/npm/tsparticles/tsparticles.bundle.min.js"></script>
         {{-- cdn sweetalert2 --}}
         {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-        
-
-
-
+        {{-- rekam id user --}}
+        <script>
+            const receiver_id = {!! auth()->check() ? auth()->user()->id : null !!};
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
    
         @livewireStyles
-        <!-- CSRF Token -->
+        <!-- CSRF Token --> 
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @vite('resources/sass/app.scss')
     </head>
