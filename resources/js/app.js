@@ -1,5 +1,11 @@
 import './bootstrap.js';
 import Alpine from 'alpinejs'
+import FormsAlpinePlugin from '../../vendor/filament/forms/dist/module.esm'
+import NotificationsAlpinePlugin from '../../vendor/filament/notifications/dist/module.esm'
+
+
+Alpine.plugin(FormsAlpinePlugin)
+Alpine.plugin(NotificationsAlpinePlugin)
 
 window.Alpine = Alpine
 Alpine.start()
@@ -54,8 +60,8 @@ Echo.private('notif.'+receiver_id)
         });
     // check apakah user sedang membuka halaman chat
     if(document.getElementById('chat-history') != null){
+        livewire.emitTo('chat.privatechat','refreshChat');
         const chatHistory = document.getElementById('chat-history');
-    
         function scrollToBottom() {
             chatHistory.scrollTop = chatHistory.scrollHeight;
         }
@@ -114,13 +120,29 @@ livewire.on('selfFound',(cariNama) => {
 });
 // check kata-kata kotor private message
 livewire.on('checkMessage',(pesan) => {
-    console.log(pesan);
     const p = filter.clean(pesan);
-    console.log(p);
     livewire.emitTo('chat.privatechat','send',p);
 });
 
+livewire.on('serviceAdded',()=>{
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        text:'user dengan role service berhasil ditambahkan',
+        showConfirmButton: false,
+        timer: 2000
+    });
+});
 
+livewire.on('serviceUpdated',()=>{
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        text:'profile anda berhasil diperbarui dan akan ditampilkan di halaman service',
+        showConfirmButton: false,
+        timer: 4000
+    });
+});
 
 if(document.getElementById('chat-history') != null){
     const chatHistory = document.getElementById('chat-history');
@@ -132,163 +154,3 @@ if(document.getElementById('chat-history') != null){
 }
 
 
-// if(document.getElementById('messageType').value == 'public'){
-//   // public message
-//   const messages_el = document.getElementById('messages');
-//   const message_input = document.getElementById('message_input');
-//   const message_form = document.getElementById('message_form');
-  
-//   message_form.addEventListener('submit', function(e) {
-//     e.preventDefault();
-  
-//     let has_errors = false;
-  
-//     if(username_input.value == '') {
-//       alert('Please enter a username');
-//       has_errors = true;
-//     }
-  
-//     if(message_input.value == '') {
-//       alert('Please enter a message');
-//       has_errors = true;
-//     }
-
-//     if(toxicWords.some(v => message_input.value === v)){
-//       alert('Speak a good word or remain silent.');
-//       has_errors = true;
-//     }
-  
-//     if(has_errors) {
-//       return;
-//     }
-  
-//     const options = {
-//       method: 'post',
-//       url: '/send-message',
-//       data: {
-//         username: username_input.value,
-//         message: message_input.value
-//       }
-//     }
-  
-//     axios(options);
-//   });
-  
-//   const chatHistory = document.getElementById('messages');
-
-//   function scrollToBottom() {
-//     chatHistory.scrollTop = chatHistory.scrollHeight;
-//   }
-//   scrollToBottom();
-
-//   window.Echo.channel('publicChat').listen('MessagePublic', (e) => {
-//     if(e.username == username_input.value){
-//       messages_el.innerHTML += `
-//       <div class='message my-message my-2'>${e.message} <strong>:${e.username}</strong></div>
-//       `
-//     }else {
-//       messages_el.innerHTML += `
-//       <div class='message other-message my-2'><strong> ${e.username}:</strong> ${e.message}</div>
-//       `
-//     }
-//     scrollToBottom();
-//   });
-// } else if(document.getElementById('messageType').value == 'private') {
-//   // private message
-//   const privateMessageElement = document.getElementById('privateMessage');
-//   const privateMessageInput = document.getElementById('privateMessageInput');
-//   const privateMessageForm = document.getElementById('privateMessageForm');
-//   const conversationId = document.getElementById('conversationId');
-//   const receiverId = document.getElementById('receiverId');
-//   const userId = document.getElementById('userId');
-//   const userUsername = document.getElementById('userName');
-  
-//   privateMessageForm.addEventListener('submit', function(e) {
-//     e.preventDefault();
-  
-//     let has_errors = false;
-  
-//     if(privateMessageInput.value == '') {
-//       alert('Please enter a message');
-//       has_errors = true;
-//     }
-
-//     if(toxicWords.some(v => privateMessageInput.value === v)){
-//       alert('Speak a good word or remain silent.');
-//       has_errors = true;
-//     }
-  
-//     if(has_errors) {
-//       return;
-//     }
-  
-//     const options = {
-//       method: 'post',
-//       url: '/send-private-message',
-//       data: {
-//         conversation_id: conversationId.value,
-//         sender_id: userId.value,
-//         sender_username : userUsername.value,
-//         message: privateMessageInput.value,
-//         receiver_id: receiverId.value
-//       }
-//     }
-  
-//     axios(options);
-//   })
-
-
-//   const chatHistory = document.getElementById('chat-history');
-
-//   function scrollToBottom() {
-//     chatHistory.scrollTop = chatHistory.scrollHeight;
-//   }
-//   scrollToBottom();
-  
-
-//   window.Echo.private('privateChat.' + conversationId.value).listen('MessagePrivate', function(e) {
-//     if(e.senderId == userIdLogin){
-//       privateMessageElement.innerHTML += `
-//       <li class="clearfix">
-//         <div class="message my-message float-right">
-//         ${e.message}
-//         </div>
-//       </li>
-//       `
-//     } else {
-//       privateMessageElement.innerHTML += `
-//       <li class="clearfix">
-//           <div class="message other-message">${e.message}</div>
-//       </li>
-//       `
-//     }
-    
-//     scrollToBottom();
-//   })
-// }
-
-
-// window.Echo.private('notif.' + userIdLogin).listen('Notif', function(e){
-//   const Toast = Swal.mixin({
-//     toast: true,
-//     position: 'top-end',
-//     showConfirmButton: false,
-//     timer: 3000,
-//     timerProgressBar: true,
-//     didOpen: (toast) => {
-//       toast.addEventListener('mouseenter', Swal.stopTimer)
-//       toast.addEventListener('mouseleave', Swal.resumeTimer)
-//     }
-//   })
-
-//   Toast.fire(swalOption = {
-//     icon: 'success',
-//     title: 'new message from ' + e.senderUserName
-//   })
-// });
-
-
-
-
-
-       

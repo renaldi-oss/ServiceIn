@@ -1,5 +1,5 @@
-<aside class="w-1/6" aria-label="Sidebar" x-data="{ hide: true }" @hide.window="hide = !hide" x-show="hide">
-    <div class="min-h-screen overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+<aside class="w-1/6 h-full" aria-label="Sidebar" x-data="{ hide: true }" @hide.window="hide = !hide" x-show="hide">
+    <div class="h-full overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
      <div>
       <div class="flex justify-center">
          <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
@@ -7,7 +7,7 @@
               <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
-            {{-- <img src="assets/images/sadboi.png" alt="image"> --}}
+            {{-- <img src="assets/images/sadboi. png" alt="image"> --}}
           </div>
       </div>
        <div class="flex flex-col items-center text-center justify-center">
@@ -24,7 +24,7 @@
                      <span class="flex-1 ml-3 whitespace-nowrap">Dashboard</span>
                   </a>
                </li>
-               <li>
+               {{-- <li>
                   <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-blue-500 transition duration-75 group-hover:text-blue-700 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                         <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Users</span>
@@ -41,6 +41,12 @@
                            <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Costumer</a>
                         </li>
                   </ul>
+               </li> --}}
+               <li>
+                  <a href="{{ route('users') }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-blue-500 transition duration-75 group-hover:text-blue-700 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                     <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
+                  </a>
                </li>
                <li>
                   <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -54,6 +60,12 @@
                      <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-blue-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                      <span class="flex-1 ml-3 whitespace-nowrap">Chat</span>
                      <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200">1</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="{{ route("profile") }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-blue-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                     <span class="flex-1 ml-3 whitespace-nowrap">Profile</span>
                   </a>
                </li>
                <li>

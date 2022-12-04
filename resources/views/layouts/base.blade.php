@@ -31,11 +31,11 @@
             const receiver_id = {!! auth()->check() ? auth()->user()->id : null !!};
         </script>
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-   
+        @vite('resources/css/app.css')
         @livewireStyles
         <!-- CSRF Token --> 
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        @vite('resources/sass/app.scss')
+
     </head>
 
     <body>
@@ -56,7 +56,7 @@
             });
           }
        </script>
+        @vite('resources/js/app.js')
          @livewireScripts
-         @vite('resources/js/app.js')
     </body>
 </html>

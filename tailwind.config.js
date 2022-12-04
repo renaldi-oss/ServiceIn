@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors') 
 
 module.exports = {
     theme: {
@@ -6,6 +7,12 @@ module.exports = {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
+            colors: { 
+                danger: colors.rose,
+                primary: colors.blue,
+                success: colors.green,
+                warning: colors.yellow,
+            }, 
         },
     },
     variants: {
@@ -24,6 +31,8 @@ module.exports = {
         './resources/**/*.vue',
         './resources/**/*.twig',
         "./node_modules/flowbite/**/*.js",
+        './resources/**/*.blade.php',
+        './vendor/filament/**/*.blade.php', 
     ],
     plugins: [
         require('@tailwindcss/forms'),

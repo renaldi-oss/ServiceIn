@@ -24,6 +24,8 @@ class Privatechat extends Component
 
     protected $listeners = [
         'refresh' => '$refresh',
+        'refreshChat' => 'refreshChatHistory',
+        'deleteMessage' => 'deleteMessage',
         'send' => 'sendMessage',
     ];
 
@@ -100,8 +102,18 @@ class Privatechat extends Component
                 $this->c_user->id
             )
         );
+        // refresh component
         $this->emit('privateMessageSent',$this->c_user->name);
-        $this->emitSelf('refresh');
+        $this->emitSelf('refreshChat');
+        $this->emitSelf('deleteMessage');
+    }
+    // refresh chat history after called
+    public function refreshChatHistory(){
+        $this->messages = Message::where('conversation_id', $this->conversation->id)->get();
+    }
+    // delete message after sent
+    public function deleteMessage(){
+        $this->message = '';
     }
    
 }

@@ -49,5 +49,10 @@ class User extends Authenticatable
     public function conversation(){
         return $this->hasMany(Conversation::class);
     }
-    
+    public function detailCostumer(){
+        return $this->hasOne(DetailCostumer::class);
+    }
+    public function detailService(){
+        return $this->hasOne(DetailService::class);
+    }
 }

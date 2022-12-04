@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\Auth\EmailVerificationController;
-use App\Http\Controllers\Auth\LogoutController;
+use App\Models\DetailService;
 use App\Http\Livewire\Auth\Login;
-use App\Http\Livewire\Auth\Passwords\Confirm;
+use App\Http\Livewire\Auth\Verify;
+use App\Http\Livewire\Auth\Register;
+use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Auth\Passwords\Email;
 use App\Http\Livewire\Auth\Passwords\Reset;
-use App\Http\Livewire\Auth\Register;
-use App\Http\Livewire\Auth\Verify;
-use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Auth\Passwords\Confirm;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\EmailVerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,8 +61,10 @@ Route::middleware('auth')->group(function () {
         return view('service');
     })->name('service');
 
-    Route::get('detailService', function () {
-        return view('detailService');
+    Route::get('detailService/{DetailService:slug}', function ($slug) {
+        return view('detailService',[
+            'service' => DetailService::where('slug', $slug)->firstOrFail()
+        ]);
     })->name('detailService');
     
     Route::get('about', function () {
@@ -74,10 +77,23 @@ Route::middleware('auth')->group(function () {
             'description' => 'disini kamu bisa berdiskusi dengan kita semua',
         ]);
     })->name('forum');
-
+    Route::get('users', function () {
+        return view('users',[
+            'title' => 'Users',
+            'description' => 'All registered users, currently there are 0 actions to influence the user :(',
+        ]);
+    })->name('users');
     Route::get('chat', function () {
         return view('chats');
     })->name('chat');
+    Route::get('profile', function () {
+        return view('profile',[
+            'title' => 'Profile',
+        ]);
+    })->name('profile');
+
+
+
 });
     
 
