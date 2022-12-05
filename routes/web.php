@@ -92,8 +92,9 @@ Route::middleware('auth')->group(function () {
         ]);
     })->name('profile');
 
-
-
+    Route::get('transaction', function () {
+        return view('transaction');
+    })->name('transaction');
 });
     
 

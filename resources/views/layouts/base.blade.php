@@ -44,19 +44,21 @@
         <script src="{{ url(asset('assets/js/hamburger.js')) }}"></script>
         <script src="{{ url(asset('assets/js/tsparticle.js')) }}"></script>
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-       <script>
-          if(document.getElementById('typed') != null){
-            var typed = new Typed("#typed", {
-                stringsElement: '#typed-strings',
-                typeSpeed: 50,
-                backSpeed: 50,
-                backDelay: 1000,
-                startDelay: 2000,
-                loop: true,
-            });
-          }
-       </script>
+        <script>
+            if(document.getElementById('typed') != null){
+                var typed = new Typed("#typed", {
+                    stringsElement: '#typed-strings',
+                    typeSpeed: 50,
+                    backSpeed: 50,
+                    backDelay: 1000,
+                    startDelay: 2000,
+                    loop: true,
+                });
+            }
+        </script>
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
         @vite('resources/js/app.js')
-         @livewireScripts
+        @livewireScripts
     </body>
+    
 </html>

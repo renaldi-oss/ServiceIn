@@ -55,4 +55,7 @@ class User extends Authenticatable
     public function detailService(){
         return $this->hasOne(DetailService::class);
     }
+    public function transaction(){
+        return $this->hasMany(Transaction::class);
+    }
 }

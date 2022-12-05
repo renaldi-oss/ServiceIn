@@ -5,12 +5,14 @@ namespace App\Http\Livewire\Profile;
 use Filament\Forms;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Livewire\TemporaryUploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Components\FileUpload;
 use Illuminate\Support\Facades\Storage;
-use Livewire\TemporaryUploadedFile;
-use Livewire\WithFileUploads;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class Service extends Component implements HasForms
@@ -62,7 +64,7 @@ class Service extends Component implements HasForms
             $this->alamat = $this->user ->detailService->alamat;
             $this->no_hp = $this->user->detailService->no_hp;
             $this->description = $this->user->detailService->description;
-            $this->image_path = asset('storage/app/public/livewire-tmp/'.$this->user->detailService->image);
+            $this->image_path = asset('./storage/livewire-tmp/'.$this->user->detailService->image);
             
             $this->form->fill([
                 'alamat' => $this->alamat,

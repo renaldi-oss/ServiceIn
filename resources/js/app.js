@@ -144,6 +144,17 @@ livewire.on('serviceUpdated',()=>{
     });
 });
 
+// transaksi dibuat
+livewire.on('transactionCreated',()=>{
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        text:'transaksi berhasil dibuat',
+        showConfirmButton: false,
+        timer: 2000
+    });
+});
+
 if(document.getElementById('chat-history') != null){
     const chatHistory = document.getElementById('chat-history');
 
@@ -153,4 +164,33 @@ if(document.getElementById('chat-history') != null){
     scrollToBottom();
 }
 
+// pembayaran midtrans
+if(document.getElementById('payment-button') != null){
+    
+    const payButton = document.querySelector('#pay-button');
+    
+    payButton.addEventListener('click', function(e) {
+        e.preventDefault();
 
+        snap.pay('{{ $snapToken }}', {
+            // Optional
+            onSuccess: function(result) {
+                /* You may add your own js here, this is just example */
+                // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                console.log(result)
+            },
+            // Optional
+            onPending: function(result) {
+                /* You may add your own js here, this is just example */
+                // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                console.log(result)
+            },
+            // Optional
+            onError: function(result) {
+                /* You may add your own js here, this is just example */
+                // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                console.log(result)
+            }
+        });
+    });
+}
