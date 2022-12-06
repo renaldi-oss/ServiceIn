@@ -25,3 +25,10 @@ Broadcast::channel('notif.{id}', function ($user, $id) {
     return true;
 });
 
+Broadcast::channel('TransactionCreated.{id}', function ($user, $id) {
+    return true;
+});
+Broadcast::channel('TransactionSuccess.{id}', function ($user, $id) {
+    return true;
+});
+

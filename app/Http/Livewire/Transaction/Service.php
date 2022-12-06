@@ -32,6 +32,7 @@ class Service extends Component implements HasTable,HasForms
 
     protected $listeners = [
         'refreshServices' => '$refresh',
+        'test' => 'test',
     ];
     
     public function render()
@@ -118,5 +119,8 @@ class Service extends Component implements HasTable,HasForms
                 'bg-green-300 text-green-600' => 'SUCCESS',
             ]),
         ];
+    }
+    public function test($result){
+        dd($result);
     } 
 }

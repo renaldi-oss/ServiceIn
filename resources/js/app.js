@@ -154,6 +154,50 @@ livewire.on('transactionCreated',()=>{
         timer: 2000
     });
 });
+livewire.on('costumer-paying',($snap)=>{
+    snap.pay($snap, {
+        // Optional
+        onSuccess: function(result) {
+            // fire event to TransactionSuccess
+            livewire.emit('test',result);
+
+            console.log(result)
+        },
+        // Optional
+        onPending: function(result) {
+            /* You may add your own js here, this is just example */
+            // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+            console.log(result)
+        },
+        // Optional
+        onError: function(result) {
+            /* You may add your own js here, this is just example */
+            // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+            console.log(result)
+        }
+    });
+});
+// listen event midtrans
+Echo.private('TransactionCreated.'+receiver_id)
+    .listen('TransactionCreated', function(e){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'info',
+            text: 'Anda Memiliki Tagihan Baru dari'+e.name,
+            showConfirmButton: false,
+            timer: 2000
+        });    
+});
+Echo.private('TransactionSuccess.'+receiver_id)
+    .listen('TransactionSuccess', function(e){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'info',
+            text: 'Transaksi telah terbayar dari '+e.name,
+            showConfirmButton: false,
+            timer: 2000
+        });    
+});
 
 if(document.getElementById('chat-history') != null){
     const chatHistory = document.getElementById('chat-history');
@@ -164,33 +208,4 @@ if(document.getElementById('chat-history') != null){
     scrollToBottom();
 }
 
-// pembayaran midtrans
-if(document.getElementById('payment-button') != null){
-    
-    const payButton = document.querySelector('#pay-button');
-    
-    payButton.addEventListener('click', function(e) {
-        e.preventDefault();
 
-        snap.pay('{{ $snapToken }}', {
-            // Optional
-            onSuccess: function(result) {
-                /* You may add your own js here, this is just example */
-                // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                console.log(result)
-            },
-            // Optional
-            onPending: function(result) {
-                /* You may add your own js here, this is just example */
-                // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                console.log(result)
-            },
-            // Optional
-            onError: function(result) {
-                /* You may add your own js here, this is just example */
-                // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                console.log(result)
-            }
-        });
-    });
-}
