@@ -159,7 +159,7 @@ livewire.on('costumer-paying',($snap)=>{
         // Optional
         onSuccess: function(result) {
             // fire event to TransactionSuccess
-            livewire.emit('test',result);
+            livewire.emitTo('transaction.costumer','TransactionSuccess',result);
 
             console.log(result)
         },
@@ -180,6 +180,7 @@ livewire.on('costumer-paying',($snap)=>{
 // listen event midtrans
 Echo.private('TransactionCreated.'+receiver_id)
     .listen('TransactionCreated', function(e){
+        livewire.emitTo('transaction.costumer','refreshCostumers');
         Swal.fire({
             position: 'top-end',
             icon: 'info',
@@ -190,10 +191,11 @@ Echo.private('TransactionCreated.'+receiver_id)
 });
 Echo.private('TransactionSuccess.'+receiver_id)
     .listen('TransactionSuccess', function(e){
+        livewire.emitTo('transaction.service','refreshServices');
         Swal.fire({
             position: 'top-end',
             icon: 'info',
-            text: 'Transaksi telah terbayar dari '+e.name,
+            text: e.name+' telah membayar transaksi anda',
             showConfirmButton: false,
             timer: 2000
         });    

@@ -3,19 +3,26 @@
 namespace App\Http\Livewire\Transaction;
 
 use Closure;
+use App\Models\User;
 use Filament\Tables;
 use Livewire\Component;
 use App\Models\Transaction;
+use App\Events\TransactionSuccess;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Columns\BadgeColumn;
 use Illuminate\Database\Eloquent\Builder;
-use Filament\Tables\Actions\Action;
 
 
 class Costumer extends Component implements HasTable
 {
     use Tables\Concerns\InteractsWithTable;
+    
+    protected $listeners = [
+        'refreshCostumers' => '$refresh',
+        'TransactionSuccess'=> 'updateStatus',
+    ];
     
     public function render()
     {
@@ -52,5 +59,22 @@ class Costumer extends Component implements HasTable
     public function pay($transaction)
     {
         $this->emit('costumer-paying',$transaction->snap_token);
+    }
+    public function updateStatus($transaction)
+    {
+        $id_transaction = Transaction::where('transaction_number',$transaction['order_id'])->update([
+            'status' => 'SUCCESS',
+        ]);
+        $transaction = Transaction::find($id_transaction);
+        // get costumer from transaction
+        $costumer = User::find($transaction->costumer_id);
+        $this->emit('refreshCostumers');
+        event(
+            new TransactionSuccess(
+                $costumer->id,
+                $costumer->name,
+                $transaction->user_id
+            )
+        );
     }
 }

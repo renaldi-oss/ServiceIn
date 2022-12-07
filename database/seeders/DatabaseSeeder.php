@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
- 
+        
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'costumer']);
         Role::create(['name' => 'service']);

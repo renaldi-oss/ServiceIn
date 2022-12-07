@@ -10,12 +10,11 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class TransaksionCreated implements ShouldBroadcast
+class TransactionSuccess implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $senderId, $senderUserName , $receiverId;
-
     /**
      * Create a new event instance.
      *
@@ -35,7 +34,7 @@ class TransaksionCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('TransactionCreated.'. $this->receiverId);
+        return new PrivateChannel('TransactionSuccess.'. $this->receiverId);
     }
     public function broadcastWith()
     {

@@ -66,7 +66,7 @@ class CallbackService extends Midtrans
         $notification = new Notification();
 
         $TransactionNumber = $notification->Transaction_id;
-        $Transaction = Transaction::where('number', $TransactionNumber)->first();
+        $Transaction = Transaction::where('transaction_number', $TransactionNumber)->first();
 
         $this->notification = $notification;
         $this->Transaction = $Transaction;

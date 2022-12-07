@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Transaction;
 
+use App\Events\TransactionCreated;
 use Closure;
 use Filament\Forms;
 use App\Models\User;
@@ -32,7 +33,6 @@ class Service extends Component implements HasTable,HasForms
 
     protected $listeners = [
         'refreshServices' => '$refresh',
-        'test' => 'test',
     ];
     
     public function render()
@@ -57,13 +57,22 @@ class Service extends Component implements HasTable,HasForms
             'status' => 'PENDING',
         ]);
         // membuat snap token
+        $this->emit('transactionCreated');
         $snap = new CreateSnapTokenService($transaksi);
         $token = $snap->getSnapToken();
         // update token ke database
         $transaksi->update([
             'snap_token' => $token,
         ]);
-        $this->emit('transactionCreated');
+        
+        // event ke costumer
+        event(
+            new TransactionCreated(
+                auth()->user()->id,
+                auth()->user()->name,
+                $user->id,
+            )
+        );
         $this->emitSelf('refreshServices');
     }
     // form
@@ -120,7 +129,4 @@ class Service extends Component implements HasTable,HasForms
             ]),
         ];
     }
-    public function test($result){
-        dd($result);
-    } 
 }
