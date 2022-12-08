@@ -17,7 +17,7 @@
         </div>
       </div>
       {{-- SearchBar --}}
-      <livewire:service.searchbar/>
+      {{-- <livewire:service.searchbar/> --}}
       {{-- Main Content card 4 item per row --}}
       {{-- komponent livewire penampil service dalam bentuk card and kawan2 --}}
       <livewire:service.card>
