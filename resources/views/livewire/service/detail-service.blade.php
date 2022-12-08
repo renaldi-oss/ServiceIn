@@ -4,8 +4,11 @@
         <div class="container px-5 py-24 mx-auto flex flex-col">
           <div class="mx-auto">
             <div class="rounded-lg h-64 overflow-hidden">
-              {{-- <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1250x600"> --}}
+              @if($service->image != null)
               <img alt="content" class="object-cover object-center h-full w-full" src="{{ asset('./storage/livewire-tmp/'.$service->image) }}">
+              @else
+              <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1250x600">
+              @endif
             </div>
             <div class="flex items-center text-center justify-center">
               <h2 class="font-medium title-font mt-4 text-gray-900 text-xl">{{ $service->nama }}</h2>

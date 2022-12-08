@@ -1,6 +1,7 @@
+
+
 {{-- grid card 4 kolom --}}
 <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 m-4">
-
   {{-- card --}}
   @foreach ($services as $service)
   <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">

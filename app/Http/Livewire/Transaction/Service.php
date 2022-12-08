@@ -30,10 +30,17 @@ class Service extends Component implements HasTable,HasForms
     public $description;
     public $alamat;
 
+    public $revenue;
+    public $unique_costumer;
 
     protected $listeners = [
         'refreshServices' => '$refresh',
     ];
+    
+    public function mount(){
+        $this->revenue = Transaction::where('status','SUCCESS')->sum('total');
+        $this->unique_costumer = Transaction::where('status','SUCCESS')->distinct('costumer_id')->count('costumer_id');    
+    }
     
     public function render()
     {
