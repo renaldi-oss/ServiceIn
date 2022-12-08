@@ -21,11 +21,19 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(asset('assets/css/scrollbar.css')) }}">
         <link rel="stylesheet" href="{{ url(asset('assets/css/background.css')) }}">
+        <link rel="stylesheet" href="{{ url(asset('assets/css/style.css')) }}">
         <!-- tsParticles engine -->
         <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
         <script src="https://cdn.jsdelivr.net/npm/tsparticles/tsparticles.bundle.min.js"></script>
-        {{-- cdn sweetalert2 --}}
-        {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+        
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+        {{-- Aos --}}
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
         {{-- rekam id user --}}
         <script>
             const receiver_id = {!! auth()->check() ? auth()->user()->id : null !!};
@@ -43,6 +51,7 @@
         {{-- js --}}
         <script src="{{ url(asset('assets/js/hamburger.js')) }}"></script>
         <script src="{{ url(asset('assets/js/tsparticle.js')) }}"></script>
+        <script src="{{ url(asset('assets/js/gsap.js')) }}"></script>
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
         <script>
             if(document.getElementById('typed') != null){
@@ -55,6 +64,11 @@
                     loop: true,
                 });
             }
+        </script>
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
         </script>
         <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
         @vite('resources/js/app.js')

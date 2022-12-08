@@ -1,0 +1,1 @@
+gsap.from('#nav', {duration: 1, y:'-100%', opacity: 0});

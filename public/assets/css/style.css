@@ -1,0 +1,3 @@
+body #hero #hero_img {
+    animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
+}
