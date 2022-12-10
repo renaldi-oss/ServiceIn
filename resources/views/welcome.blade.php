@@ -3,52 +3,13 @@
 @section('content')
     <div class="flex flex-col">
         <x-navbar />
-        {{-- <div class="flex items-center justify-center">
-            <div class="flex flex-col justify-around">
-                <div class="space-y-6">
-                    <a href="{{ route('home') }}">
-                        <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
-                    </a>
-
-                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
-                        {{ config('app.name') }}
-                    </h1>
-                    <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
-                        Technology
-                        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-                            
-                        </a>
-                    </p>
-                    <ul class="list-reset">
-                        <li class="inline px-4">
-                            <a href="https://tailwindcss.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Tailwind CSS</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://github.com/alpinejs/alpine" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Alpine.js</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://laravel.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Laravel</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://laravel-livewire.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Livewire</a>
-                        </li>
-                    </ul>
-                    <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
-                        Tools
-                        <a href="https://filamentphp.com/" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-                            Filament
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div> --}}
         <section class="bg-gradient-to-tl from-cyan-900 via-sky-300 to-cyan-400 overflow-hidden w-screen h-screen">
                 <div class="mt-10 px-6 pt-32 text-center">
                     <div class="container mx-auto xl:px-32">
                         <div class="grid gap-12 items-center">
                             <div class="mt-32" style="z-index: 10;">
-                                <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold mb-12"><span class="text-teal-900" data-aos="fade-down" data-aos-duration="1000" >ServiceIn</span></h1>
-                                <div class="type-wrap">
+                                <h1 data-aos="fade-left" data-aos-duration="1000" class="text-5xl md:text-6xl xl:text-7xl font-bold mb-12"><span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-600" data-aos="fade-down" data-aos-duration="1000" >ServiceIn</span></h1>
+                                <div class="type-wrap" data-aos="fade-up" data-aos-duration="1000">
                                     <div id="typed-strings" class="text-base">
                                       <span>Your Satisfaction is our <strong> #1 Priority</strong></span>
                                       <p><strong>ServiceIn</strong> Solusi perangkat anda</p>
@@ -74,7 +35,7 @@
             <p class="text-teal-900 font-medium mb-5 text-center" data-aos="fade-down" data-aos-duration="1000">🤔🤔 ServiceIn ??</p>
             <div class="p-3 w-full flex flex-wrap items-center justify-between">
                 <div class="w-full md:w-1/2" id="div_img_about">
-                <img src="{{ asset('assets/images/lp/h-cup.png') }}" data-aos="fade-up" data-aos-delay="100" alt="GAMBAR LP" width="1000" class="mx-auto lg:mx-0 lg:mr-auto border-b-2 border-teal-500">
+                <img src="{{ asset('assets/images/lp/h-cup.png') }}" data-aos="fade-up" data-aos-delay="500" alt="GAMBAR LP" width="1000" class="mx-auto lg:mx-0 lg:mr-auto border-b-2 border-teal-500">
                 </div>
                 <div class="about-main mb-16 mt-5 md:w-1/2">
                 <h2 class="text-2xl text-teal-500" data-aos="fade-up">Teknologi</h2>
@@ -155,28 +116,28 @@
             <div class="p-3 w-full flex flex-wrap items-center justify-center">
     
                 <div id="content-services" data-aos="fade-up" data-aos-delay="150" class="hover:scale-95 transition duration-300 ease-in-out w-full h-max my-1 p-2 md:w-72">
-                    <div class="border-2 p-5 md:h-72 border-teal-900 rounded-2xl h-max">
+                    <div class="border-2 p-5 md:h-72 border-teal-600 rounded-2xl h-max">
                         <span>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="60" class="mx-auto">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="60" class="mx-auto ">
                             <title>Chat</title>
                             <path d="M11.986 23.972C5.411 23.972 0 18.561 0 11.986 0 5.411 5.411 0 11.986 0c6.575 0 11.986 5.411 11.986 11.986a11.9 11.9 0 0 1-2.492 7.281l2.062 2.062c.293.293.458.691.458 1.106 0 .859-.706 1.565-1.565 1.565-.415 0-.813-.165-1.106-.458l-2.062-2.062a11.9 11.9 0 0 1-7.281 2.492Zm6.664-6.001a8.936 8.936 0 0 0 2.31-5.985c0-4.923-4.051-8.974-8.974-8.974-2.702 0-5.141 1.22-6.792 3.135h5.255v2.458H3.681a8.851 8.851 0 0 0-.536 1.844H9.22v2.459H3.06c.087.845.297 1.673.621 2.459h4.31v2.458H5.194c1.651 1.915 4.09 3.135 6.792 3.135 2.29 0 4.392-.877 5.985-2.31a1.59 1.59 0 0 1 .679-.679Zm-9.43-.146h7.376v-2.458H9.22v2.458Zm6.147-4.917h4.917v-2.459h-4.917v2.459Zm-4.918 0h3.074v-2.459h-3.074v2.459Zm1.844-4.303h4.918V6.147h-4.918v2.458Z"/>
                         </svg>
                         </span>
-                        <h2 class="text-center mt-10 text-teal-900 font-semibold">Chat</h2>
-                        <p class="text-center text-teal-900">Chat Melalui websocket Pusher</p>
+                        <h2 class="text-center mt-10 text-teal-600 font-semibold">Chat</h2>
+                        <p class="text-center text-teal-600">Chat Melalui websocket Pusher</p>
                     </div>
                 </div>
     
                 <div id="content-services" data-aos="fade-up" data-aos-delay="250" class="hover:scale-95 transition duration-300 ease-in-out h-max my-1 p-2 md:w-72">
-                    <div class="border-2 p-5 md:h-72 border-teal-900 rounded-2xl w-full h-max ">
+                    <div class="border-2 p-5 md:h-72 border-teal-600 rounded-2xl w-full h-max ">
                         <span>
                         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="60" class="mx-auto">
                             <title>Payment</title>
                             <path d="M11.986 23.972C5.411 23.972 0 18.561 0 11.986 0 5.411 5.411 0 11.986 0c6.575 0 11.986 5.411 11.986 11.986a11.9 11.9 0 0 1-2.492 7.281l2.062 2.062c.293.293.458.691.458 1.106 0 .859-.706 1.565-1.565 1.565-.415 0-.813-.165-1.106-.458l-2.062-2.062a11.9 11.9 0 0 1-7.281 2.492Zm6.664-6.001a8.936 8.936 0 0 0 2.31-5.985c0-4.923-4.051-8.974-8.974-8.974-2.702 0-5.141 1.22-6.792 3.135h5.255v2.458H3.681a8.851 8.851 0 0 0-.536 1.844H9.22v2.459H3.06c.087.845.297 1.673.621 2.459h4.31v2.458H5.194c1.651 1.915 4.09 3.135 6.792 3.135 2.29 0 4.392-.877 5.985-2.31a1.59 1.59 0 0 1 .679-.679Zm-9.43-.146h7.376v-2.458H9.22v2.458Zm6.147-4.917h4.917v-2.459h-4.917v2.459Zm-4.918 0h3.074v-2.459h-3.074v2.459Zm1.844-4.303h4.918V6.147h-4.918v2.458Z"/>
                         </svg>
                         </span>
-                        <h2 class="text-center mt-10 text-teal-900 font-semibold">Payment</h2>
-                        <p class="text-center text-teal-900" >Pembayaran Melalui payment gateway midtrans</p>  
+                        <h2 class="text-center mt-10 text-teal-600 font-semibold">Payment</h2>
+                        <p class="text-center text-teal-600" >Pembayaran Melalui payment gateway midtrans</p>  
                     </div>
                 </div>
     

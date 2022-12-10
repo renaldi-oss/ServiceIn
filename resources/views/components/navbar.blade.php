@@ -48,6 +48,8 @@
   <div class="container px-3 md:pl-10 md:pr-5 lg:pl-28 lg:pr-16">
     <div class="relative flex items-center justify-between">
       <div class="px-4 flex">
+        {{-- check if user at route('home') --}}
+        @if (Route::currentRouteName() !== 'home')
         <div x-data="{ hamburger: false }">
           <button x-data class="text-gray-500 w-10 h-10 relative focus:outline-none" @click="hamburger = !hamburger; $dispatch('hide')">
               <div class="block w-5 absolute left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">
@@ -57,7 +59,7 @@
               </div>
           </button>
         </div> 
-      
+        @endif
         <a href="/" class="flex items-center">
           <img src="assets/images/logo.png" class="mr-3 h-6 sm:h-9" alt="Logo">
           <span class="text-teal-500 self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ config('app.name') }}</span>
