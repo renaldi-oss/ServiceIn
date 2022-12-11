@@ -2,8 +2,8 @@
 <!-- Chatting -->
 
 <div class="flex flex-row justify-between bg-white mt-5">
-  <!-- chat list -->
-    <div class="flex flex-col w-2/5 border-r-2">
+    <!-- chat list -->
+    <div class="flex flex-col w-2/5 border-r-2" data-aos="fade-right" >
         <!-- CARI USER -->
         <div class="border-b-2 px-2 py-2">
             <form wire:submit.prevent="cariUser">
@@ -13,7 +13,7 @@
         </div>
         <!-- end search compt -->
         <!-- user list -->
-        <div class="max-h-[80vh] overflow-y-auto scrollbar">
+        <div class="max-h-[80vh] overflow-y-auto scrollbar" data-aos="zoom-in">
           @foreach ($conversations as $c)
             <?php
             if ($c->user_one != Auth::user()->id){
@@ -45,7 +45,7 @@
     </div>
   <!-- end chat list -->
   <!-- message -->
-  <div class="w-full h-full px-5 flex flex-col justify-between">
+  <div class="w-full h-full px-5 flex flex-col justify-between" data-aos="fade-left" >
     {{-- jika percakapan dimulai/load --}}
     @if ($showchat)
     <div class="flex w-full border-b-2">
@@ -70,7 +70,7 @@
       {{-- current user --}}
       @foreach ($messages as $m)
         @if ($m->user_id == Auth::user()->id)
-        <div class="flex justify-end mb-4">
+        <div class="flex justify-end mb-4" data-aos="fade-right">
           <div class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white">
             {{ $m->message }}
           </div>
@@ -78,7 +78,7 @@
         </div>
         @else
         {{-- else --}}
-        <div class="flex justify-start mb-4">
+        <div class="flex justify-start mb-4" data-aos="fade-left">
           <img src="assets/images/sadboi.png" class="object-cover h-8 w-8 rounded-full" alt="receiver"/>
           <div class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white">
             {{ $m->message }}
@@ -88,7 +88,7 @@
       @endforeach
     </div>
     {{-- input message --}}
-    <div class="py-5">
+    <div class="py-5" data-aos="flip-right" data-aos-duration="500">
       <form wire:submit.prevent="passMessage">
         <input
         class="w-full py-5 px-6 rounded-xl border-2 border-gray-200 outline-none focus:border-indigo-500" type="text"

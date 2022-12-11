@@ -9,11 +9,11 @@
     <div class="w-full flex flex-col m-2">
       {{-- header content --}}
       <div class="text-center">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Transaksi</h1>
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4"data-aos="zoom-in-right" data-aos-duration="1000">Transaksi</h1>
         @role('service')
-        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">kamu dapat membuat transaksi ke costumer</p>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s" data-aos="zoom-in-left" data-aos-duration="1000">kamu dapat membuat transaksi ke costumer</p>
         @else
-        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">kamu dapat melakukan transaksi yang telah disepakati</p>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s" data-aos="zoom-in-left" data-aos-duration="1000">kamu dapat melakukan transaksi yang telah disepakati</p>
         @endrole
         {{-- garis --}}
         <div class="flex mt-6 justify-center">

@@ -1,5 +1,4 @@
 <div>
-
   <div class="m-4 flex items-center justify-center">
     <form class="w-1/2" wire:submit.prevent="">   
       <label class="sr-only">Search</label>
@@ -15,9 +14,9 @@
 {{-- grid card 4 kolom --}}
 <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 m-4">
   {{-- card --}}
-  {{-- {{ dd($services) }} --}}
+
   @foreach ($services as $service)
-  <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+  <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" data-aos="fade-left" data-aos-duration="500">
     <div class="flex justify-between items-center mb-5 text-gray-500">
         {{-- TAG SERVIS BLOM BERGUNA --}}
         {{-- <div class="flex gap-1">
@@ -62,8 +61,11 @@
   </div>
   @endforeach
   {{-- end card --}}
+
   {{-- paginator --}}
-  {{ $services->links() }}
+  <div data-aos="fade-right" data-aos-duration="500">
+    {{ $services->links() }}
+  </div>
  
 </div>
 

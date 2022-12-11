@@ -1,4 +1,4 @@
-<div>
+<div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
     {{-- The Master doesn't talk, he acts. --}}
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto flex flex-col">

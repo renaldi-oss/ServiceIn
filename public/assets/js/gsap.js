@@ -9,11 +9,7 @@ window.onscroll = function () {
 };
 
 gsap.from('#nav', {duration: 1, y:'-100%', opacity: 0});
+gsap.from('#sidebar', {duration: 1, x:'-100%', opacity: 0});
 gsap.from('#typed-strings', {duration: 1, x: -50, opacity: 0, delay: 0.5, ease:'back'});
-// gsap.from('#name', {duration: 1, x: -50, opacity: 0, delay: 1, ease:'back'});
-// gsap.from('#newbie', {duration: 1, x: -50, opacity: 0, delay: 1.5, ease:'back'});
-// gsap.from('#note', {duration: 1, x: -50, opacity: 0, delay: 2, ease:'back'});
-// gsap.from('#buttonHeader', {duration: 1, x: -50, opacity: 0, delay: 2.5, ease:'back'});
-// gsap.from('#div_img_hero', {duration: 1, y: -30, opacity: 0, delay: 0.5, ease:'back'});
-// gsap.from('#div_img_about', {duration: 1, y: -30, opacity: 0, delay: 0.5, ease:'back'});
-// gsap.from('#div_img_contact', {duration: 1, y: -30, opacity: 0, delay: 0.5, ease:'back'});
+
+gsap.from('#serviceIN', {duration: 2, x: -50, opacity: 0, delay: 0.5, ease:'in'});

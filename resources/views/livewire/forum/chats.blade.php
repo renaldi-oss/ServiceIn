@@ -4,7 +4,7 @@
         {{-- item per chat --}}
           @foreach ($messages as $m)
             @if (Auth::user()->id == $m->user_id)
-              <div class="flex">
+              <div class="flex" data-aos="fade-left" data-aos-duration="1000">
                 <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed bg-cyan-400">
                   <strong>{{ $m->user->name }}</strong><span class="text-xs text-gray-400"> Posted At : {{Carbon\Carbon::parse($m->created_at)->diffForHumans()  }}</span>
                   <p class="text-sm">
@@ -16,7 +16,7 @@
                 </div>
               </div>
             @else
-              <div class="flex ">
+              <div class="flex" data-aos="fade-right" data-aos-duration="1000">
                 <div class="flex-shrink-0 mr-3">
                   <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"  src="assets/images/sadboi.png" alt="PHOTO">
                 </div>

@@ -28,6 +28,9 @@
             }
 
         </script>
-        {{ $this->table }}
+        <div data-aos="fade-up" data-aos-duration="1000">
+            {{ $this->table }}
+
+        </div>
     </div>
 </div>
