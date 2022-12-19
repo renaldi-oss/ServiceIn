@@ -25,9 +25,8 @@ class LoginTest extends TestCase
     public function is_redirected_if_already_logged_in()
     {
         $user = User::factory()->create();
-
-        $this->be($user);
-
+        // $this->be($user);
+        Auth::login($user);
         $this->get(route('login'))
             ->assertRedirect(route('home'));
     }
@@ -37,11 +36,14 @@ class LoginTest extends TestCase
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
+        // lakukan login dengan cara memangil komponen login
+        // dan mengisi email dan password
+        // kemudian memanggil method authenticate
         Livewire::test('auth.login')
             ->set('email', $user->email)
             ->set('password', 'password')
             ->call('authenticate');
-
+        // lakukan pengecekan apakah user sudah login
         $this->assertAuthenticatedAs($user);
     }
 

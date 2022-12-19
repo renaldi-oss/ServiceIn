@@ -1,5 +1,5 @@
 <div>
-  <div class="m-4 flex items-center justify-center">
+  <div class="m-4 flex items-center justify-center" data-aos="fade-left">
     <form class="w-1/2" wire:submit.prevent="">   
       <label class="sr-only">Search</label>
       <div class="relative w-full">

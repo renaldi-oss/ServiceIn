@@ -15,8 +15,8 @@ class LogoutTest extends TestCase
     public function an_authenticated_user_can_log_out()
     {
         $user = User::factory()->create();
-        $this->be($user);
-
+        // $this->be($user);
+        Auth::login($user);
         $this->post(route('logout'))
             ->assertRedirect(route('home'));
 

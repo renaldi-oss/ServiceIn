@@ -4,6 +4,7 @@ namespace Tests\Feature\Auth\Passwords;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
@@ -26,7 +27,8 @@ class ConfirmTest extends TestCase
     public function a_user_must_confirm_their_password_before_visiting_a_protected_page()
     {
         $user = User::factory()->create();
-        $this->be($user);
+        // $this->be(auth()->user());
+        Auth::login($user);
 
         $this->get('/must-be-confirmed')
             ->assertRedirect(route('password.confirm'));
@@ -64,7 +66,8 @@ class ConfirmTest extends TestCase
             'password' => Hash::make('password'),
         ]);
 
-        $this->be($user);
+        // $this->be($this->user);
+        Auth::login($user);
 
         $this->withSession(['url.intended' => '/must-be-confirmed']);
 
