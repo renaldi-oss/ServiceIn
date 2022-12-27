@@ -93,6 +93,6 @@ class DatabaseSeeder extends Seeder
                 'no_hp' => faker::create('id_ID')->phoneNumber(),
             ]);
         });
-        $bar->line('Task complete!');
+        $bar->advance(50);
     }
 }
