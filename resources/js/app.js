@@ -1,5 +1,5 @@
 import './bootstrap.js';
-import '../css/app.css'; 
+
 
 import Alpine from 'alpinejs'
 import FormsAlpinePlugin from '../../vendor/filament/forms/dist/module.esm'
