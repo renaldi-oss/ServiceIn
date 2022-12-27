@@ -1,4 +1,6 @@
 import './bootstrap.js';
+import '../css/app.css'; 
+
 import Alpine from 'alpinejs'
 import FormsAlpinePlugin from '../../vendor/filament/forms/dist/module.esm'
 import NotificationsAlpinePlugin from '../../vendor/filament/notifications/dist/module.esm'
