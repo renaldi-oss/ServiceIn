@@ -12,7 +12,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
-
+use Symfony\Component\Console\Helper\ProgressBar;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -23,10 +23,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
+        $bar = new ProgressBar($this->command->getOutput(), 100);
+        $bar->start();
+
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'costumer']);
         Role::create(['name' => 'service']);
-        
+        $bar->advance(5);
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
@@ -38,7 +41,6 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'Jl. Raya Cibaduyut',
             'no_hp' => '081234567890',
         ]);
-
         User::factory()->create([
             'name' => 'Costumer',
             'email' => 'costumer@gmail.com',
@@ -50,7 +52,7 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'Jl. Kebon Jeruk',
             'no_hp' => '08123456789',
         ]);
-
+       
         
         User::factory()->create([
             'name' => 'service',
@@ -66,6 +68,7 @@ class DatabaseSeeder extends Seeder
             'alamat' => faker::create('id_ID')->address(),
             'no_hp' => faker::create('id_ID')->phoneNumber(),
         ]);
+        $bar->advance(20);
         //membuat akun dummy costumer
         user::factory(20)->create()->each(function ($user) {
             $user->assignRole('costumer');
@@ -75,6 +78,7 @@ class DatabaseSeeder extends Seeder
                 'no_hp' => faker::create('id_ID')->phoneNumber(),
             ]);
         });
+        $bar->advance(25);
         //membuat akun dummy service
         user::factory(89)->create()->each(function ($user) {
             $user->assignRole('service');
@@ -89,5 +93,6 @@ class DatabaseSeeder extends Seeder
                 'no_hp' => faker::create('id_ID')->phoneNumber(),
             ]);
         });
+        $bar->line('Task complete!');
     }
 }
